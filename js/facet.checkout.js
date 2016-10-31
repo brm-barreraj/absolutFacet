@@ -102,11 +102,12 @@ $(document).ready(function(){
 			var txtCaptcha = grecaptcha.getResponse();
 			captchaData = { txtCaptcha : txtCaptcha};
 			var resultAjaxCaptcha = sendAjax("checkout", "captcha", captchaData);
-			if (resultAjaxCaptcha == 0) {
+			if (resultAjaxCaptcha.error == 0) {
 				alert("captcha incorrecto");
-			}else if (resultAjaxCaptcha == 2) {
+			}else if (resultAjaxCaptcha.error == 2) {
 				alert("captcha no coincide");
-			}else if (resultAjaxCaptcha == 1) {
+			}else if (resultAjaxCaptcha.error == 1) {
+				console.log('entado acá');
 				var dataForm = $("#facturacion").serialize();
 				var resultAjax = sendAjax("checkout", "comprar", dataForm);
 				if (resultAjax.error == 0) {
