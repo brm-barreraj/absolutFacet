@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-10-28 23:59:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-10-31 14:07:19
          compiled from "./templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:13094057765813cf0a0efa30-40253870%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f937424a82010298ee2c5ed317654509d5ec4f0c' => 
     array (
       0 => './templates/index.html',
-      1 => 1477693417,
+      1 => 1477922822,
       2 => 'file',
     ),
   ),
@@ -30,6 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <meta type="description" content="Una botella edición limitada que, con su diseño asimétrico y unos bordes cortados como una gema, crean un número de caras que capturan y reflejan la luz de una forma única, simbolizando todas las facetas en las que las #AbsolutNights pueden llevarte">
 <link href="https://fonts.googleapis.com/css?family=Muli:300|Raleway:600,900&amp;subset=latin-ext" rel="stylesheet"> 
+<link href="css/animate.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 
  <!--[if lt IE]>
@@ -48,15 +49,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div class="topBar alignCenter"><img src="images/absolut_logo.gif" class="logo" alt="Absolut" title="Absolut"/></div>
 
-<form id="ageGate" class="text-center age-gate-in">
+<form id="ageGate" class="text-center age-gate-in" style="display:none;">
     
     <h2 class="text_title">Bienvenido</h2>
     <p class="text_subtitle">Por favor ingresa tu fecha de nacimiento:</p>
     
     <div class="container">
-        <input type="text" placeholder="DD" class="form-control " maxlength="2">
-        <input type="text" placeholder="MM" class="form-control" maxlength="2">
-        <input type="text" placeholder="AAAA" class="form-control" maxlength="4">
+        <div class="animate-date">
+            <input type="text" placeholder="DD" class="form-control" id="dia" maxlength="2">
+            <input type="text" placeholder="MM" class="form-control" id="mes" maxlength="2">
+            <input type="text" placeholder="AAAA" class="form-control" id="anio" maxlength="4">
+        </div>
+            
 
         <p>Debes ser mayor de edad</p>
 
@@ -67,7 +71,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             
           </label>
         </div>
-        <button id="btn_ageGate" type="button" class="btn">Enviar</button>
+        <button id="btn_ageGate" type="button" class="btn animate-btn">Enviar</button>
     </div>
 
 
@@ -76,8 +80,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="columnWidth home">
 	<div>
    	  <div class="introBottles">
-        	<div class="bottle_ON" id="ONbottle"><img src="images/absolut_facet_bottle_ON.png" width="362" height="652" alt="Absolut Facet" title="Absolut Facet"/></div>
-            <div class="bottle_OFF"><img src="images/absolut_facet_bottle_OFF.png" width="362" height="652" alt="Absolut Facet" title="Absolut Facet"/></div>
+        	<div class="bottle_ON" id="ONbottle"><img src="images/absolut_facet_bottle_ON.png" style="display:none;" class="animate-absolut" width="362" height="652" alt="Absolut Facet" title="Absolut Facet"/></div>
+            <div class="bottle_OFF"><img src="images/absolut_facet_bottle_OFF.png" style="display:none;" class="animate-absolut" width="362" height="652" alt="Absolut Facet" title="Absolut Facet"/></div>
         </div>
         
         <div class="introTXT">
@@ -109,6 +113,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <?php echo '<script'; ?>
  src="js/libs.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/functions.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="js/facet.gate.js"><?php echo '</script'; ?>
