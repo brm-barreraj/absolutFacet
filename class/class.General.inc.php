@@ -180,7 +180,7 @@ class General
 		return ($campos);
 	}
 	function getTotalDatos($table = '',$fields = '',$conditions = '',$orden = '',$limiteInferior = -1,$limiteSuperior = -1,$notIn=''){
-		//DB_DataObject::debugLevel(0);
+		DB_DataObject::debugLevel(1);
 		
 		//printVar($table,"tabla");
 		//printVar($fields,"Field");

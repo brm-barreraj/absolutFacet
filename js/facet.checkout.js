@@ -68,8 +68,10 @@ $(document).ready(function(){
 		subtotal += valorTotalCombo;
 		if (cantTextCombo > 0) {
 			$("#combo"+i).show();
-			$("#combo"+i+" td:eq(1)").text(cantTextCombo);
-			$("#combo"+i+" td:eq(2)").text(valorTotalCombo);
+			// Cantidad combo
+			$("#combo"+i+" td:eq(1)").text("$"+cantTextCombo);
+			// Total por combo
+			$("#combo"+i+" td:eq(2)").text("$"+valorTotalCombo);
 		}
 	}
 

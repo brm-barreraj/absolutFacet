@@ -13,6 +13,7 @@ class DataObject_AbsPedido extends DB_DataObject
     public $nombre;                          // blob(65535)  blob
     public $tipoDocumento;                   // string(45)  
     public $documento;                       // string(15)  
+    public $fechaNacimiento;                 // date(10)  binary
     public $direccion;                       // blob(65535)  blob
     public $apartamento;                     // string(75)  
     public $ciudad;                          // string(75)  
@@ -24,6 +25,7 @@ class DataObject_AbsPedido extends DB_DataObject
     public $cantidadCombo3;                  // int(11)  
     public $cantidadCombo4;                  // int(11)  
     public $totalValor;                      // string(75)  
+    public $horusId;                         // string(75)  
     public $fecha;                           // datetime(19)  binary
 
     /* Static get */
@@ -36,6 +38,7 @@ class DataObject_AbsPedido extends DB_DataObject
              'nombre' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'tipoDocumento' =>  DB_DATAOBJECT_STR,
              'documento' =>  DB_DATAOBJECT_STR,
+             'fechaNacimiento' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'direccion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'apartamento' =>  DB_DATAOBJECT_STR,
              'ciudad' =>  DB_DATAOBJECT_STR,
@@ -47,6 +50,7 @@ class DataObject_AbsPedido extends DB_DataObject
              'cantidadCombo3' =>  DB_DATAOBJECT_INT,
              'cantidadCombo4' =>  DB_DATAOBJECT_INT,
              'totalValor' =>  DB_DATAOBJECT_STR,
+             'horusId' =>  DB_DATAOBJECT_STR,
              'fecha' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
@@ -74,6 +78,7 @@ class DataObject_AbsPedido extends DB_DataObject
              'email' => '',
              'celular' => '',
              'totalValor' => '',
+             'horusId' => '',
          );
     }
 

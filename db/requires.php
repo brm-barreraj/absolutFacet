@@ -4,6 +4,12 @@
 
 global $prefijo;
 
+global $_local;
+global $_proxy;
+
+$_proxy="172.16.224.4:8080";
+$_local = ($_SERVER['HTTP_HOST'] == "127.0.0.1" || $_SERVER['HTTP_HOST'] == "localhost") ? true : false;
+
 require($prefijo."db/DBO.php");
 
 //DataObjects
@@ -13,6 +19,8 @@ require($prefijo."db/requires.ini.php");
 
 //Clases
 require($prefijo."class/class.General.inc.php");
+require($prefijo."class/class.horus.php");
+
 /*require($prefijo."class/class.MillerLite.inc.php");*/
 
 //Smarty

@@ -35,7 +35,6 @@ switch ($_POST['action']) {
 			isset($_POST['cantC4']) && $_POST['cantC4'] >= 0 &&
 			isset($_POST['terminos']) && $_POST['terminos'] >= 0) {
 
-
 			$General = new General;
 			$actualCombo = $General->getTotalDatos('AbsPedido',array("sum(cantidadCombo1) AS combo1","sum(cantidadCombo2) AS combo2","sum(cantidadCombo3) AS combo3","sum(cantidadCombo4) AS combo4"));
 
@@ -88,6 +87,7 @@ switch ($_POST['action']) {
 		$result["data"]=$data;
 		$result["error"]=$error;
 		echo json_encode($result);
+
 		// Errores 
 		// 0 = Datos no válidos
 		// 1 = Inserto correctamente
@@ -103,7 +103,19 @@ switch ($_POST['action']) {
 			$secret = "6LectAoUAAAAAMX4NNv0WPWT_rcTQP6ps4qE08BP";
 		    //get verified response data
 		    $param = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$_POST['txtCaptcha'];
-		    $verifyResponse = file_get_contents($param);
+		    if($_local){
+		    	$aContext = array(
+					'http' => array(
+						'proxy' => 'tcp://'.$_proxy,
+						'request_fulluri' => true,
+					),
+				);
+				$cxContext = stream_context_create($aContext);
+				$verifyResponse = file_get_contents($param, false, $cxContext);
+		    }else{
+		    	$verifyResponse = file_get_contents($param);
+		    }
+			
 		    $responseData = json_decode($verifyResponse);
 		    if($responseData->success){
 		        // success
@@ -125,6 +137,7 @@ switch ($_POST['action']) {
 	break;
 
 	default:
+		$res = new Horus(1);
 		$General = new General;
 		$totalPedido = $General->getTotalDatos('AbsPedido',array("(sum(cantidadCombo1)+sum(cantidadCombo2)+sum(cantidadCombo3)+sum(cantidadCombo4)) AS totalPedido"));
 		$botellasSobran = ($totalUnidades - $totalPedido[0]->totalPedido);
