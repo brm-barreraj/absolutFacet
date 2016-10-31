@@ -1,3 +1,4 @@
+validYears(true);
 jQuery(document).ready(function($) {
 		/* Ejemplo de galería */
 	$('.galleryModule a').magnificPopup({

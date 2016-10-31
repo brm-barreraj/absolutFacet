@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css?family=Muli:300|Raleway:600,900&amp;subset=latin-ext" rel="stylesheet"> 
+<link href="css/animate.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 
  <!--[if lt IE]>
@@ -28,13 +29,12 @@
     <a href="galeria" class="topBtn alignCenter " id="topBtn_02">galería</a>
     <!-- <a class="midSpace">&nbsp;</a> -->
     <a  class="topBtn alignCenter active" id="topBtn_03">comprar</a>
-</div>
 
 <h1 class="columnWidth alignCenter sectionTXTS_upperTXT" id="cartTxt">catálogo</h1>
 <div class="columnWidth alignCenter sectionTXTS_TITLE" id="cartTitle"><img src="images/absolut_hashtag.png" width="391" height="46" alt="#ABSOLUTFACET"/></div>
 <div class="alignCenter sectionTXTS_bottlesCounter" id="cartDescription">
     <h2 class="txt">Solo quedan</h2>
-    <p class="amount">000000</p>
+    <p class="amount animate-nbotellas">{#$botellasSobran#}</p>
     <p class="txt">Unidades de Absolut Facet.</p>
 </div>
 
@@ -45,14 +45,14 @@
     <div class="product">
       <img src="images/cartProducts_01.jpg" alt="Botella de Absolut" title="Botella de Absolut" >
     </div>
-    <p class="price">$99.999</p>
-    <p class="name">Botella de Absolut</p>
+    <p class="price">$60.000</p>
+    <p class="name">Botella de Absolut con caja especial</p>
     
     <div class="cantidad">
-      <input type="text" maxlength="2" placeholder="0" class="form-control">
+      <input type="text" maxlength="2" placeholder="0" class="form-control" id="txt-cmb1">
       <div class="controls">
-        <button type="button" href="#" class="controls-add">+</button>
-        <button type="button" href="#" class="controls-remove">-</button>
+        <button type="button" href="#" class="controls-add" data-idc="1">+</button>
+        <button type="button" href="#" class="controls-remove" data-idc="1">-</button>
       </div>
     </div>
 
@@ -62,14 +62,14 @@
 
       <div class="product"><img src="images/cartProducts_02.jpg" alt="2 botellas + kit Facet (gorra y maleta)" title="2 botellas + kit Facet (gorra y maleta)"></div>
 
-      <p class="price">$99.999</p>
-      <p class="name">2 botellas + kit Facet (gorra y maleta)</p>
+      <p class="price">125.000</p>
+      <p class="name">Botella de Absolut + Sombrilla Absolut facet</p>
       
       <div class="cantidad">
-        <input type="text" maxlength="2" placeholder="0" class="form-control">
+        <input type="text" maxlength="2" placeholder="0" class="form-control" id="txt-cmb2">
         <div class="controls">
-          <button type="button" href="#" class="controls-add">+</button>
-          <button type="button" href="#" class="controls-remove">-</button>
+          <button type="button" href="#" class="controls-add" data-idc="2">+</button>
+          <button type="button" href="#" class="controls-remove" data-idc="2">-</button>
         </div>
       </div>
 
@@ -79,14 +79,14 @@
 
     <div class="product"><img src="images/cartProducts_03.jpg" alt="3 botellas + kit fiesta (mentas, maletas, camiseta)" title="3 botellas + kit fiesta (mentas, maletas, camiseta)"></div>
 
-    <p class="price">$99.999</p>
-    <p class="name">3 botellas + kit fiesta (mentas, maletas, camiseta)</p>
+    <p class="price">$110.000</p>
+    <p class="name">Botella de Absolut + Coctelera Absolut</p>
     
     <div class="cantidad">
-      <input type="text" maxlength="2" placeholder="0" class="form-control">
+      <input type="text" maxlength="2" placeholder="0" class="form-control" id="txt-cmb3">
       <div class="controls">
-        <button type="button" href="#" class="controls-add">+</button>
-        <button type="button" href="#" class="controls-remove">-</button>
+        <button type="button" href="#" class="controls-add" data-idc="3">+</button>
+        <button type="button" href="#" class="controls-remove" data-idc="3">-</button>
       </div>
     </div>
 	</div>
@@ -99,16 +99,15 @@
       <p class="name">Combo sorpresa</p>
       
       <div class="cantidad">
-        <input type="text" maxlength="2" placeholder="0" class="form-control">
+        <input type="text" maxlength="2" placeholder="0" class="form-control" id="txt-cmb4">
         <div class="controls">
-          <button type="button" href="#" class="controls-add">+</button>
-          <button type="button" href="#" class="controls-remove">-</button>
+          <button type="button" href="#" class="controls-add" data-idc="4">+</button>
+          <button type="button" href="#" class="controls-remove" data-idc="4">-</button>
         </div>
       </div>
       
 	</div>
-    
-    <a href="checkout" class="btn_pay" id="PAYbtn">Pagar</a>
+    <div  class="btn_pay" id="PAYbtn" value="Pagar">Pagar</div>
 </div>
 
 <div class="footer">
@@ -118,5 +117,7 @@
 </div>
 
 <script src="js/libs.min.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/facet.products.js"></script>
 </body>
 </html>

@@ -1,4 +1,29 @@
-<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es-CO"> <![endif]-->
+<?php /* Smarty version Smarty-3.1.16, created on 2016-10-31 02:08:18
+         compiled from "./templates/checkout.html" */ ?>
+<?php /*%%SmartyHeaderCode:7507772258167156daf4e3-25987084%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'a7528229ab5e6ddb69197d372ac14692140aac41' => 
+    array (
+      0 => './templates/checkout.html',
+      1 => 1477897697,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '7507772258167156daf4e3-25987084',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_58167156e63a21_76221923',
+  'variables' => 
+  array (
+    'botellasSobran' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_58167156e63a21_76221923')) {function content_58167156e63a21_76221923($_smarty_tpl) {?><!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es-CO"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es-CO"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="es-CO"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-CO"> <!--<![endif]-->
@@ -36,7 +61,8 @@
 <div class="columnWidth alignCenter sectionTXTS_TITLE" id="cartTitle"><img src="images/absolut_hashtag.png" width="391" height="46" alt="#ABSOLUTFACET" title="#ABSOLUTFACET"/></div>
 <div class="alignCenter sectionTXTS_bottlesCounter" id="cartDescription">
     <h2 class="txt">Solo quedan</h2>
-    <p class="amount animate-nbotellas">{#$botellasSobran#}</p>
+    <p class="amount animate-nbotellas"><?php echo $_smarty_tpl->tpl_vars['botellasSobran']->value;?>
+</p>
     <p class="txt">Unidades de Absolut Facet.</p>
 </div>
 
@@ -195,3 +221,4 @@
 <script src="js/facet.checkout.js"></script>
 </body>
 </html>
+<?php }} ?>

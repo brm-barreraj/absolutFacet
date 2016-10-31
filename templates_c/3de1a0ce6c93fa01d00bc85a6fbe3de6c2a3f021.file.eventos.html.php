@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-10-28 22:24:46
+<?php /* Smarty version Smarty-3.1.16, created on 2016-10-31 00:07:28
          compiled from "./templates/eventos.html" */ ?>
-<?php /*%%SmartyHeaderCode:5090226145813cf84d597a7-66602366%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16689789595816d1909f6081-26721199%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '5e437b8c806e5e3b6a7085c354421ef1d890d564' => 
+    '3de1a0ce6c93fa01d00bc85a6fbe3de6c2a3f021' => 
     array (
       0 => './templates/eventos.html',
-      1 => 1477693450,
+      1 => 1477888568,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5090226145813cf84d597a7-66602366',
+  'nocache_hash' => '16689789595816d1909f6081-26721199',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5813cf84dc5723_91767683',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5816d190a11902_10022533',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5813cf84dc5723_91767683')) {function content_5813cf84dc5723_91767683($_smarty_tpl) {?><!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es-CO"> <![endif]-->
+<?php if ($_valid && !is_callable('content_5816d190a11902_10022533')) {function content_5816d190a11902_10022533($_smarty_tpl) {?><!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es-CO"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es-CO"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="es-CO"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-CO"> <!--<![endif]-->
@@ -31,15 +31,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <meta type="description" content="Una botella edición limitada que, con su diseño asimétrico y unos bordes cortados como una gema, crean un número de caras que capturan y reflejan la luz de una forma única, simbolizando todas las facetas en las que las #AbsolutNights pueden llevarte">
 <link href="https://fonts.googleapis.com/css?family=Muli:300|Raleway:600,900&amp;subset=latin-ext" rel="stylesheet"> 
+<link href="css/animate.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
  <!--[if lt IE]>
-  <?php echo '<script'; ?>
- src="//html5shiv.googlecode.com/svn/trunk/html5.js"><?php echo '</script'; ?>
->
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <?php echo '<script'; ?>
- src="js/modernizr-2.6.2.min.js"><?php echo '</script'; ?>
->
+  <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
@@ -152,19 +149,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <p class="info">dirección del lugar</p>
 
 	</div>
-    
-    
 </div>
-
 <div class="footer">
     <div class="footer_logo alignCenter"><img src="images/absolut_logo.gif" width="128" height="31"  alt="Absolut" title="Absolut"/></div>
     <div class="footer_links alignCenter"><a href="http://www.absolut.com/co/Terminos-y-Condiciones-de-Uso/" target="_blank">Terms &amp; Conditions</a> • <a href="http://www.absolut.com/co/privacy-policy/" target="_blank">Privacy Policy</a> • <a href="http://www.absolut.com/co/Responsabilidad-de-todos-los-sitios-web-de-The-Absolut-Company/" target="_blank">Responsibility Statement</a></div>
     <div class="footer_legals alignCenter"><img src="images/legals.gif" style="max-width:100%;height:auto;" alt="Prohíbese el expendio de bebidas embriagantes a menores de edad. el exceso de alcohol es perjudicial para la salud. Si tomas, no manejes." title="Prohíbese el expendio de bebidas embriagantes a menores de edad. el exceso de alcohol es perjudicial para la salud. Si tomas, no manejes."/></div>
 </div>
-
-<?php echo '<script'; ?>
- src="js/libs.min.js"><?php echo '</script'; ?>
->
+<script src="js/libs.min.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/facet.events.js"></script>
 </body>
 </html>
 <?php }} ?>
