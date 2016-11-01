@@ -1,22 +1,23 @@
 <?php
 require("db/requires.php");
+$Horus = new Horus;
 
 // Unidades combos
-$combo1U=100;
-$combo2U=30;
-$combo3U=25;
+$combo1U= $Horus->combo1U;
+$combo2U= $Horus->combo2U;
+$combo3U= $Horus->combo3U;
 // Falta cambiar El combo 4
-$combo4U=0;
-$totalUnidades = ($combo1U + $combo2U + $combo3U + $combo4U);
+$combo4U= $Horus->combo4U;
+$totalUnidades = $Horus->totalUnidades;
 
 // Valores combos
-$combo1V=60000;
-$combo2V=125000;
-$combo3V=110000;
+$combo1V= $Horus->combo1V;
+$combo2V= $Horus->combo2V;
+$combo3V= $Horus->combo3V;
 // Falta cambiar El combo 4
-$combo4V=0;
-$totalEnvio=4000;
-$totalValores = ($combo1V + $combo2V + $combo3V + $combo4V);
+$combo4V= $Horus->combo4V;
+$totalEnvio= $Horus->totalEnvio;
+$totalValores = $Horus->totalValores;
 
 switch ($_POST['action']) {
 	case 'comprar':
@@ -74,6 +75,10 @@ switch ($_POST['action']) {
 				if ($idPedido > 0) {
 					// Inserto correctamente
 					$data =	$idPedido;
+					if(!$_local){
+						// Envío Horus
+						//$Horus->init($idPedido);
+					}
 					$error=1;
 				}else{
 					// Ocurrio un error al insertar
@@ -137,7 +142,6 @@ switch ($_POST['action']) {
 	break;
 
 	default:
-		$res = new Horus(1);
 		$General = new General;
 		$totalPedido = $General->getTotalDatos('AbsPedido',array("(sum(cantidadCombo1)+sum(cantidadCombo2)+sum(cantidadCombo3)+sum(cantidadCombo4)) AS totalPedido"));
 		$botellasSobran = ($totalUnidades - $totalPedido[0]->totalPedido);
