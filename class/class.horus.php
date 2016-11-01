@@ -60,6 +60,7 @@ class Horus extends General
 		$this->totalValores = ($this->combo1V + $this->combo2V + $this->combo3V + $this->combo4V);
 	}
 
+	// Inicializa el proceso en horus
 	public function init($id){
 		if ($id > 0) {
 			$usuario = $this->getTotalDatos('AbsPedido',null,array('id'=>$id));
@@ -83,77 +84,51 @@ class Horus extends General
 		}
 	}
 
-	private function regHorus(){
-		$param = 'firstName='.$this->nombre.'&hash='.$this->pass.'&lastName='.$this->apellido.'&email='.$this->mail.'&identifyNumber='.$this->cedula.'&birthday='.$this->nacimiento.'&mobile='.$this->celular.'&country=CO&language=ES&gender='.$this->genero.'&luxuaryTrue=true&type=IC';
-		$rescurl = $this->fcurl($param);
-		$store = $rescurl["result"];
-		$error= $rescurl["error"];
-
-		printVar($store,'Respuesta curl json_encode');
-		printVar($error,'errror');
-		if (isset($store->message)) { // si viene mensaje de error
-			//echo 'Mensaje :'.$store->message;
-			if ($store->message=='The consumer already exists in Touchpoint') { //si ya esta regisrado en horus se dispara evento de logueo
-				$this->doLogin(); 
-			}
-		}else{
-			$this->horusId=$store->_id;
-			$cliente=DB_DataObject::Factory('chro_cliente');
-			$cliente->id=$this->id;
-			$find=$cliente->find();
-			if ($find>0) {
-				$cliente->horusId=$this->horusId;
-				$cliente->update();
-			}
-			$cliente->free();
-			//echo 'Registro Horus ok';
-			$this->doLogin($this->id);
-		}
-	}
-
-	private function fcurl($param){
+	// Realiza peticion por Curl
+	private function fcurl($param,$url,$custom=false){
+		$cabeceras = array("X-TOUCHPOINT-TOKEN: $this->touchPoint","api_key: $this->apiKey");
+		if ($custom) { array_push($cabeceras, "X-CUSTOMER-DIGITAL-EXTENSION-TOKEN: $this->horusTokenUser"); }
 		$curl = curl_init();
-		if ($_local) {
-			curl_setopt($curl, CURLOPT_PROXY, $_proxy);
-		}
-		curl_setopt($curl, CURLOPT_URL, $this->urlRegistro);
+		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt ($curl, CURLOPT_POST, 1);
 		curl_setopt ($curl, CURLOPT_POSTFIELDS, $param);
-		curl_setopt($curl,CURLOPT_HTTPHEADER, array(
-		    "X-TOUCHPOINT-TOKEN: $this->touchPoint", 
-		    "api_key: $this->apiKey")); 
+		curl_setopt($curl,CURLOPT_HTTPHEADER, $cabeceras);
 		curl_setopt ($curl, CURLOPT_RETURNTRANSFER, 1);
 		$result = json_decode(curl_exec ($curl));
 		$error= curl_errno($curl) . '-' . curl_error($curl);
 		$return = array("result" => $result, "error" => $error);
-		//printVar($return,"return");
 		return $return;
 	}
 
-	private function doLogin(){
-		/*peticion post login*/
-		$param = 'hash='.$this->pass.'&email='.$this->mail;
-		$rescurl = $this->fcurl($param);
+	// Registra al usuario
+	private function regHorus(){
+		$param = 'firstName='.$this->nombre.'&hash=f4'.$this->pass.'c3t&lastName='.$this->apellido.'&email='.$this->mail.'&identifyNumber='.$this->cedula.'&birthday='.$this->nacimiento.'&mobile='.$this->celular.'&country=CO&language=ES&gender=&luxuaryTrue=true&type=IC';
+		$rescurl = $this->fcurl($param,$this->urlRegistro);
 		$store = $rescurl["result"];
 		$error= $rescurl["error"];
-		die;
-		if (isset($store->message)) { // si viene mensaje de error
-			echo 'hay error '.$store->message;
-			//if ($store->message=='The consumer already exists in Touchpoint') {
-				//Si no se loga logear que hago??????
-			//}
+		if (isset($store->_id)) {
+			$this->doLogin();
+		}
+	}
+
+	// Realiza login
+	private function doLogin(){
+		/*peticion post login*/
+		$param = 'hash=f4'.$this->pass.'c3t&email='.$this->mail;
+		$rescurl = $this->fcurl($param,$this->urlLogin);
+		$store = $rescurl["result"];
+		$error= $rescurl["error"];
+		if (!isset($store->token)) {
+			$this->regHorus();
 		}else{
 			$this->horusTokenUser=$store->token;
-			$this->initInteraction($param);
-			//echo 'Login ok';
-			//printVar($store->token);
+			$this->initInteraction();
 		}
 	}
 
 	// inicia las variable de compra
 	private function initInteraction(){
 		$varIni = "BrandProduct_Nber=".$this->brand."&LocalAttribute_Litres=".$this->litres."&";
-
 		if ($this->cantidadCombo1>0) {
 			$total = ($this->combo1V*$this->cantidadCombo1);
 			$param=$varIni."SKU=".$this->comboName1."&QuantityProduct=".$this->cantidadCombo1."&PurchaseAmount=".$total."&LocalAttribute_Shippingcost=".$this->totalEnvio."&OrderNumber=".$this->id;
@@ -176,12 +151,11 @@ class Horus extends General
 		}
 	}
 
-	private function triggerInteraction($param){ /*Disparo de interacion de compra*/
-		$rescurl = $this->fcurl($param);
+	// Realiza compra
+	private function triggerInteraction($param){
+		$rescurl = $this->fcurl($param,$this->urlInteraccion.$this->compra,true);
 		$store = $rescurl["result"];
 		$error= $rescurl["error"];
-		printVar($store,'Respuesta curl compra');
-		printVar($error,'error curl compra');
 	}
 }
 

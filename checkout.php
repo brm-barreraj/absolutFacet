@@ -77,7 +77,7 @@ switch ($_POST['action']) {
 					$data =	$idPedido;
 					if(!$_local){
 						// Envío Horus
-						//$Horus->init($idPedido);
+						$Horus->init($idPedido);
 					}
 					$error=1;
 				}else{
