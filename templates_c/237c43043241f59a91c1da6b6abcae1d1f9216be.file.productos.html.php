@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 17:22:43
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 20:20:24
          compiled from "./templates/productos.html" */ ?>
 <?php /*%%SmartyHeaderCode:51441735813d02f397766-23932323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '237c43043241f59a91c1da6b6abcae1d1f9216be' => 
     array (
       0 => './templates/productos.html',
-      1 => 1478193741,
+      1 => 1478204422,
       2 => 'file',
     ),
   ),
@@ -83,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="alignCenter cartModule">
   
     <div class="product">
-      <img src="images/cartProducts_01.jpg" alt="Botella de Absolut" title="Botella de Absolut" >
+      <img src="images/botella.jpg" alt="Botella de Absolut" title="Botella de Absolut" >
     </div>
     <p class="price">$60.000</p>
     <p class="name">Botella de Absolut con caja especial</p>
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
    <div class="alignCenter cartModule">
 
-    <div class="product"><img src="images/cartProducts_03.jpg" alt="3 botellas + kit fiesta (mentas, maletas, camiseta)" title="3 botellas + kit fiesta (mentas, maletas, camiseta)"></div>
+    <div class="product"><img src="images/combo-coctelera.jpg" alt="3 botellas + kit fiesta (mentas, maletas, camiseta)" title="3 botellas + kit fiesta (mentas, maletas, camiseta)"></div>
 
     <p class="price">$110.000</p>
     <p class="name">Botella de Absolut + Coctelera Absolut</p>
@@ -130,8 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
 	</div>
-	
-    <div class="alignCenter cartModule">
+    <!-- <div class="alignCenter cartModule">
 
       <div class="product"><img src="images/cartProducts_04.jpg" alt="Combo sorpresa" title="Combo sorpresa"></div>
 
@@ -146,7 +145,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       </div>
       
-	</div>
+	</div> -->
   <div  class="btn_pay" id="PAYbtn" value="Pagar">Pagar</div>
   <div id="errorMensaje" class="mensaje-sistema" style="display:none;">
       <p>
