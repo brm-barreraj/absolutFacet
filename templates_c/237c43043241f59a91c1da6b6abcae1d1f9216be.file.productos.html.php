@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 20:20:24
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 20:32:27
          compiled from "./templates/productos.html" */ ?>
 <?php /*%%SmartyHeaderCode:51441735813d02f397766-23932323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '237c43043241f59a91c1da6b6abcae1d1f9216be' => 
     array (
       0 => './templates/productos.html',
-      1 => 1478204422,
+      1 => 1478205146,
       2 => 'file',
     ),
   ),
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
     <div class="alignCenter cartModule">
 
-      <div class="product"><img src="images/cartProducts_02.jpg" alt="2 botellas + kit Facet (gorra y maleta)" title="2 botellas + kit Facet (gorra y maleta)"></div>
+      <div class="product"><img src="images/combo-coctelera.jpg" alt="2 botellas + kit Facet (gorra y maleta)" title="2 botellas + kit Facet (gorra y maleta)"></div>
 
       <p class="price">125.000</p>
       <p class="name">Botella de Absolut + Sombrilla Absolut facet</p>
@@ -130,8 +130,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
 	</div>
+  <input type="hidden" disabled="disabled" readonly maxlength="2" placeholder="0" class="form-control" id="txt-cmb4">
     <!-- <div class="alignCenter cartModule">
-
       <div class="product"><img src="images/cartProducts_04.jpg" alt="Combo sorpresa" title="Combo sorpresa"></div>
 
       <p class="price">$99.999</p>
