@@ -67,15 +67,14 @@ $(document).ready(function(){
 		if (cantTextCombo > 0) {
 			$("#combo"+i).show();
 			// Cantidad combo
-			$("#combo"+i+" td:eq(1)").text("$"+cantTextCombo);
+			$("#combo"+i+" td:eq(1)").text(cantTextCombo);
 			// Total por combo
-			$("#combo"+i+" td:eq(2)").text("$"+valorTotalCombo);
+			$("#combo"+i+" td:eq(2)").text("$"+Number(valorTotalCombo).toLocaleString('COP'));
 		}
 	}
-
 	total = (subtotal + envio);
-	$("#subtotalCombos").text("$"+subtotal);
-	$("#totalCombos").text("$"+total);
+	$("#subtotalCombos").text("$"+Number(subtotal).toLocaleString('COP'));
+	$("#totalCombos").text("$"+Number(total).toLocaleString('COP'));
 
 	if(sumUnidCombos == 0){
 		// No hay combos seleccionados redireccionamos a productos
