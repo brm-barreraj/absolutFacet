@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-10-31 17:40:46
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 19:52:24
          compiled from "./templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:13094057765813cf0a0efa30-40253870%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f937424a82010298ee2c5ed317654509d5ec4f0c' => 
     array (
       0 => './templates/index.html',
-      1 => 1477935644,
+      1 => 1478202741,
       2 => 'file',
     ),
   ),
@@ -87,6 +87,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </label>
         </div>
         <button id="btn_ageGate" type="button" class="btn animate-btn">Enviar</button>
+            <div id="errorMensaje" class="mensaje-sistema" style="display:none;">
+                <p>
+                    
+                </p>
+            </div>
     </div>
 
 
@@ -104,13 +109,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="alignCenter hashtag" id="facetTXT_01"><img src="images/absolut_hashtag.png" alt="#absoluthashtag" title="#absoluthashtag"/></div>
             <div class="alignCenter txt" id="facetTXT_02">Una botella edición limitada que, con su diseño asimétrico y unos bordes cortados como una gema, crean un número de caras que capturan y reflejan la luz de una forma única, simbolizando todas las facetas en las que las #AbsolutNights pueden llevarte.</div>
             <a href="productos" class="btn_buy" id="BUYbtn">Cómprala aquí</a>
-            <div class="alignCenter txt01" id="facetTXT_03">Solo quedan <?php echo $_smarty_tpl->tpl_vars['botellasSobran']->value;?>
- unidades de Absolut Facet.</div>
+            <!--div class="alignCenter txt01" id="facetTXT_03">Solo quedan <?php echo $_smarty_tpl->tpl_vars['botellasSobran']->value;?>
+ unidades de Absolut Facet.</div-->
         </div>
     </div>
     
-    <div class="video-container alignCenter" id="video">
-        <iframe width="1300" height="800"  src="https://www.youtube.com/embed/5tZe-A2L5cE" frameborder="0" allowfullscreen></iframe>
+    <div class="video-container alignCenter">
+       <div class="play">
+           
+       </div>
+       <video loop id="video">
+           <source src="video/facet.mp4" type="video/mp4">
+           <source src="video/facet.ogv" type="video/ogg">
+           <source src="video/facet.webm" type="video/webm">
+       </video>
     </div>
     <div class="sectionBTNS">
     	<a href="eventos" class="btn_eventsSection" id="EVENTSsec_btn">eventos</a>

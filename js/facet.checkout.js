@@ -6,8 +6,6 @@ $(document).ready(function(){
 		var arrDataForm = dataForm.split("&");
 		for (var i = 0; i < arrDataForm.length; i++) {
 			eachData = arrDataForm[i].split("=");
-			console.log(eachData[0],"key 1");
-			console.log(eachData[1],"value 1")
 			key = eachData[0];
 			value = eachData[1]
 				.replace(/%40/g,"@")
@@ -105,34 +103,36 @@ $(document).ready(function(){
 			captchaData = { txtCaptcha : txtCaptcha};
 			var resultAjaxCaptcha = sendAjax("checkout", "captcha", captchaData);
 			if (resultAjaxCaptcha.error == 0) {
-				alert("captcha incorrecto");
+				message("captcha incorrecto",3000);
 			}else if (resultAjaxCaptcha.error == 2) {
-				alert("captcha no coincide");
+				message("captcha no coincide",3000);
 			}else if (resultAjaxCaptcha.error == 1) {
 				console.log('entado acá');
-				var dataForm = $("#facturacion").serialize();
+				var dataForm = $("#facturacion").serialize()+"&fechaNac="+getCookie("f3ch4Nac#af");
 				var resultAjax = sendAjax("checkout", "comprar", dataForm);
 				if (resultAjax.error == 0) {
-					alert("Datos no válidos");
+					message("Datos no válidos",3000);
 				}else if (resultAjax.error == 1) {
-					alert("inserto correctamente");
+					message("inserto correctamente",3000);
 					// Borramos cookies
 					deleteCookie("dataForm");
 					for (var i = 1 ; i <= 4; i++) {
 						deleteCookie("cmb"+i);
 					}
 					// Redirecciona
-					window.location.href = "./";
+					setTimeout(function(){
+						window.location.href = "./";
+					},3500);
 				}else if (resultAjax.error == 2) {
-					alert("Ocurrio un error al insertar");
+					message("Ocurrio un error al insertar",3000);
 				}else if (resultAjax.error == 31) {
-					alert("No hay combos disponibles para el combo 1");
+					message("No hay combos disponibles para el combo 1",3000);
 				}else if (resultAjax.error == 32) {
-					alert("No hay combos disponibles para el combo 2");
+					message("No hay combos disponibles para el combo 2",3000);
 				}else if (resultAjax.error == 33) {
-					alert("No hay combos disponibles para el combo 3");
+					message("No hay combos disponibles para el combo 3",3000);
 				}else if (resultAjax.error == 34) {
-					alert("No hay combos disponibles para el combo 4");
+					message("No hay combos disponibles para el combo 4",3000);
 				}
 			};
 		}

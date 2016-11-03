@@ -1,7 +1,7 @@
 function indexValid(){
 	setTimeout(function(){
 		$(".animate-absolut").show()
-		animate(".animate-absolut", "zoomIn");
+		animate(".animate-absolut", "fadeIn");
 	},1500);
 	$('#ageGate')
 	.addClass('absolute')
@@ -45,20 +45,43 @@ $(document).ready(function($) {
 		    var fechaActual = new Date();
 		    fechaActual.setFullYear(fechaActual.getFullYear() - edad);
 		    if ((fechaActual - miFecha) < 0){
-				alert("Disculpa, sólo personas de más de " + edad + " pueden ingresar a este sitio.");
+				message("Disculpa, sólo personas de más de " + edad + " pueden ingresar a este sitio.",3000);
 		    }else{
 		    	if ($('#recordarme').is(':checked')) {
 		    		// Si el usuario desea recordar que es mayor de edad - guarda localstorage
 		    		localStorage.setItem("i34rs#af", "1a8fls");
-		    		console.log("checked true");
-		    	}else{
-		    		console.log("checked false");
 		    	}
+		    	var fechaNac = $("#anio").val()+"-"+$("#mes").val()+"-"+$("#dia").val();
+		    	setCookie("f3ch4Nac#af", fechaNac, 1);
 		    	setCookie("i34rs#af", "1a8fc", 1); 
 		    	indexValid();
 		    }
 		}else{
-			alert("Fecha incorrecta");
+			message("Fecha incorrecta",3000);
 		}
 	});
+
+	var vid;
+
+	$('.play')
+		.click(function() {
+
+			$('.play').velocity('fadeOut', {duration:500});				
+			vid = document.getElementById("video");
+			vid.play();	
+		});
+
+
+	$('#video')
+		.click(function() {
+
+			$('.play').velocity('fadeIn', {duration:500});				
+			vid = document.getElementById("video");
+			if(vid.paused){
+				vid.play();
+			}else{
+				vid.pause();
+			}
+		});
+
 });

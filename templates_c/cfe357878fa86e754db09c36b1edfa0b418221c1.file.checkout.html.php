@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-10-31 17:19:17
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 17:26:44
          compiled from "./templates/checkout.html" */ ?>
 <?php /*%%SmartyHeaderCode:5263414005813d0be9f94d2-12247214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cfe357878fa86e754db09c36b1edfa0b418221c1' => 
     array (
       0 => './templates/checkout.html',
-      1 => 1477934082,
+      1 => 1478194001,
       2 => 'file',
     ),
   ),
@@ -215,9 +215,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="txt03">No vendemos a menores de edad, es necesario presentar la cédula de la persona que recibe el pedido. </div>
     <div class="g-recaptcha" data-sitekey="6LectAoUAAAAAF5MimV3XzWEcJoRnpDQs2z6Nr1v"></div>
+    <div id="errorMensaje" class="mensaje-sistema" style="display:none;">
+        <p>
+            
+        </p>
+    </div>
     <div class="btn_confirm" id="PAYconfirm_btn">realizar pedido</div>
     <div class="btn_back" id="BACKbtn">regresar</div>
-
   <div class="confirmacion hidden">
     <p class="text-center">
       Gracias por comprar

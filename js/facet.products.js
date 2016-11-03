@@ -40,7 +40,7 @@ $(document).ready(function(){
 		if(sumUnidCombos > 0){
 			window.location.href = "checkout";
 		}else{
-			alert("Debes escober al menos un combo");
+			message("Debes escober al menos un combo",3000);
 		}
 	});
 	

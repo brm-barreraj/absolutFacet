@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-10-31 17:25:55
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 17:22:43
          compiled from "./templates/productos.html" */ ?>
 <?php /*%%SmartyHeaderCode:51441735813d02f397766-23932323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '237c43043241f59a91c1da6b6abcae1d1f9216be' => 
     array (
       0 => './templates/productos.html',
-      1 => 1477934745,
+      1 => 1478193741,
       2 => 'file',
     ),
   ),
@@ -147,7 +147,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       
 	</div>
-    <div  class="btn_pay" id="PAYbtn" value="Pagar">Pagar</div>
+  <div  class="btn_pay" id="PAYbtn" value="Pagar">Pagar</div>
+  <div id="errorMensaje" class="mensaje-sistema" style="display:none;">
+      <p>
+          
+      </p>
+  </div>
 </div>
 
 <div class="footer">

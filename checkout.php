@@ -34,7 +34,8 @@ switch ($_POST['action']) {
 			isset($_POST['cantC2']) && $_POST['cantC2'] >= 0 &&
 			isset($_POST['cantC3']) && $_POST['cantC3'] >= 0 &&
 			isset($_POST['cantC4']) && $_POST['cantC4'] >= 0 &&
-			isset($_POST['terminos']) && $_POST['terminos'] >= 0) {
+			isset($_POST['terminos']) && $_POST['terminos'] >= 0 &&
+			isset($_POST['fechaNac']) && $_POST['fechaNac'] != "") {
 
 			$General = new General;
 			$actualCombo = $General->getTotalDatos('AbsPedido',array("sum(cantidadCombo1) AS combo1","sum(cantidadCombo2) AS combo2","sum(cantidadCombo3) AS combo3","sum(cantidadCombo4) AS combo4"));
@@ -71,6 +72,7 @@ switch ($_POST['action']) {
 				$Pedido->cantidadCombo3=$_POST['cantC3'];
 				$Pedido->cantidadCombo4=$_POST['cantC4'];
 				$Pedido->totalValor=$totalValor;
+				$Pedido->fechaNacimiento=$_POST['fechaNac'];
 				$idPedido = $Pedido->setInstancia('AbsPedido');
 				if ($idPedido > 0) {
 					// Inserto correctamente
