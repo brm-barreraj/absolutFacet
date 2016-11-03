@@ -78,7 +78,7 @@ $(document).ready(function(){
 
 	if(sumUnidCombos == 0){
 		// No hay combos seleccionados redireccionamos a productos
-		window.location.href = "productos";
+		window.location.href = "productos.php";
 	}
 
 	// Botón terminos
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	$("#BACKbtn").click(function(){
 		var dataForm = $("#facturacion").serialize();
 		setCookie("dataForm",dataForm,1);
-		window.location.href = "productos";
+		window.location.href = "productos.php";
 	});
 
 	// Botón realizar pedido

@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema abs_facet
+-- Schema brm2_f4c3db
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema abs_facet
+-- Schema brm2_f4c3db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `abs_facet` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `abs_facet` ;
+CREATE SCHEMA IF NOT EXISTS `brm2_f4c3db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `brm2_f4c3db` ;
 
 -- -----------------------------------------------------
--- Table `abs_facet`.`abs_pedido`
+-- Table `brm2_f4c3db`.`abs_pedido`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `abs_facet`.`abs_pedido` (
+CREATE TABLE IF NOT EXISTS `brm2_f4c3db`.`abs_pedido` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `nombre` TEXT NULL COMMENT '',
   `tipoDocumento` VARCHAR(45) NULL COMMENT '',

@@ -38,7 +38,7 @@ $(document).ready(function(){
 			setCookie("cmb"+i, valTextCombo, 1);
 		}
 		if(sumUnidCombos > 0){
-			window.location.href = "checkout";
+			window.location.href = "checkout.php";
 		}else{
 			message("Debes escober al menos un combo",3000);
 		}
