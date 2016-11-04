@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 19:52:24
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-04 16:23:35
          compiled from "./templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:13094057765813cf0a0efa30-40253870%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f937424a82010298ee2c5ed317654509d5ec4f0c' => 
     array (
       0 => './templates/index.html',
-      1 => 1478202741,
+      1 => 1478276321,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TWDKQD');<?php echo '</script'; ?>
+})(window,document,'script','dataLayer','GTM-KQKTG4');<?php echo '</script'; ?>
 >
 <!-- End Google Tag Manager -->
 
@@ -108,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         	<h1 class="alignCenter upperTXT" id="introTXT">Las mejores noches son las más inesperadas.</h1>
             <div class="alignCenter hashtag" id="facetTXT_01"><img src="images/absolut_hashtag.png" alt="#absoluthashtag" title="#absoluthashtag"/></div>
             <div class="alignCenter txt" id="facetTXT_02">Una botella edición limitada que, con su diseño asimétrico y unos bordes cortados como una gema, crean un número de caras que capturan y reflejan la luz de una forma única, simbolizando todas las facetas en las que las #AbsolutNights pueden llevarte.</div>
-            <a href="productos" class="btn_buy" id="BUYbtn">Cómprala aquí</a>
+            <a href="productos.php" class="btn_buy" id="BUYbtn">Cómprala aquí</a>
             <!--div class="alignCenter txt01" id="facetTXT_03">Solo quedan <?php echo $_smarty_tpl->tpl_vars['botellasSobran']->value;?>
  unidades de Absolut Facet.</div-->
         </div>
@@ -125,9 +125,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        </video>
     </div>
     <div class="sectionBTNS">
-    	<a href="eventos" class="btn_eventsSection" id="EVENTSsec_btn">eventos</a>
-        <a href="galeria" class="btn_gallerySection" id="GALLERYsec_btn">galería</a>
-        <a href="productos" class="btn_buySection" id="BUYsec_btn">comprar</a>
+    	<a href="eventos.php" class="btn_eventsSection" id="EVENTSsec_btn">eventos</a>
+        <a href="galeria.php" class="btn_gallerySection" id="GALLERYsec_btn">galería</a>
+        <a href="productos.php" class="btn_buySection" id="BUYsec_btn">comprar</a>
     </div>
     
     
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="footer_legals alignCenter"><img src="images/legals.gif" style="max-width:100%;height:auto;" alt="Prohíbese el expendio de bebidas embriagantes a menores de edad. el exceso de alcohol es perjudicial para la salud. Si tomas, no manejes." title="Prohíbese el expendio de bebidas embriagantes a menores de edad. el exceso de alcohol es perjudicial para la salud. Si tomas, no manejes."/></div>
 </div>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWDKQD"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQKTG4"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php echo '<script'; ?>

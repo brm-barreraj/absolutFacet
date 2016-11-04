@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-03 20:32:27
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-04 16:23:47
          compiled from "./templates/productos.html" */ ?>
 <?php /*%%SmartyHeaderCode:51441735813d02f397766-23932323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '237c43043241f59a91c1da6b6abcae1d1f9216be' => 
     array (
       0 => './templates/productos.html',
-      1 => 1478205146,
+      1 => 1478276352,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TWDKQD');<?php echo '</script'; ?>
+})(window,document,'script','dataLayer','GTM-KQKTG4');<?php echo '</script'; ?>
 >
 <!-- End Google Tag Manager -->
 
@@ -60,12 +60,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
-<div class="topBar alignCenter"><a href="index" target=""><img src="images/absolut_logo.gif" alt="Absolut" title="Absolut"/></a>
+<div class="topBar alignCenter"><a href="index.php" target=""><img src="images/absolut_logo.gif" alt="Absolut" title="Absolut"/></a>
 </div>
 <div class="columnWidth sectionBTNS_top">
-	  <a href="eventos" class="topBtn alignCenter" id="topBtn_01">eventos</a>
+	  <a href="eventos.php" class="topBtn alignCenter" id="topBtn_01">eventos</a>
     <!-- <a class="midSpace">&nbsp;</a> -->
-    <a href="galeria" class="topBtn alignCenter " id="topBtn_02">galería</a>
+    <a href="galeria.php" class="topBtn alignCenter " id="topBtn_02">galería</a>
     <!-- <a class="midSpace">&nbsp;</a> -->
     <a  class="topBtn alignCenter active" id="topBtn_03">comprar</a>
 
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="footer_legals alignCenter"><img src="images/legals.gif" style="max-width:100%;height:auto;" alt="Prohíbese el expendio de bebidas embriagantes a menores de edad. el exceso de alcohol es perjudicial para la salud. Si tomas, no manejes." title="Prohíbese el expendio de bebidas embriagantes a menores de edad. el exceso de alcohol es perjudicial para la salud. Si tomas, no manejes."/></div>
 </div>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWDKQD"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQKTG4"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php echo '<script'; ?>
