@@ -106,12 +106,20 @@ $(document).ready(function(){
 			}else if (resultAjaxCaptcha.error == 2) {
 				message("captcha no coincide",3000);
 			}else if (resultAjaxCaptcha.error == 1) {
-				console.log('entado acá');
 				var dataForm = $("#facturacion").serialize()+"&fechaNac="+getCookie("f3ch4Nac#af");
 				var resultAjax = sendAjax("checkout.php", "comprar", dataForm);
 				if (resultAjax.error == 0) {
 					message("Datos no válidos",3000);
 				}else if (resultAjax.error == 1) {
+					// Evento Analytics
+					console.log(resultAjax.data,"data");
+					var idPedido = resultAjax.data.idPedido;
+					var total = resultAjax.data.total;
+					dataLayer.push({'event': 'envio-exitoso'});
+					dataLayer = [{
+						'transactionId': idPedido,
+						'transactionTotal': total
+					}];
 					message("inserto correctamente",3000);
 					// Borramos cookies
 					deleteCookie("dataForm");

@@ -76,7 +76,7 @@ switch ($_POST['action']) {
 				$idPedido = $Pedido->setInstancia('AbsPedido');
 				if ($idPedido > 0) {
 					// Inserto correctamente
-					$data =	$idPedido;
+					$data = array('idPedido' => $idPedido,'total' => $totalValor);
 					if(!$_local){
 						// Envío Horus
 						$Horus->init($idPedido);
