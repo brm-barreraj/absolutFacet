@@ -100,7 +100,7 @@ $(document).ready(function(){
 		if ($("#facturacion").valid() && validYears()) {
 			var txtCaptcha = grecaptcha.getResponse();
 			captchaData = { txtCaptcha : txtCaptcha};
-			var resultAjaxCaptcha = sendAjax("checkout", "captcha", captchaData);
+			var resultAjaxCaptcha = sendAjax("checkout.php", "captcha", captchaData);
 			if (resultAjaxCaptcha.error == 0) {
 				message("captcha incorrecto",3000);
 			}else if (resultAjaxCaptcha.error == 2) {
@@ -108,7 +108,7 @@ $(document).ready(function(){
 			}else if (resultAjaxCaptcha.error == 1) {
 				console.log('entado acá');
 				var dataForm = $("#facturacion").serialize()+"&fechaNac="+getCookie("f3ch4Nac#af");
-				var resultAjax = sendAjax("checkout", "comprar", dataForm);
+				var resultAjax = sendAjax("checkout.php", "comprar", dataForm);
 				if (resultAjax.error == 0) {
 					message("Datos no válidos",3000);
 				}else if (resultAjax.error == 1) {
