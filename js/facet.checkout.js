@@ -38,13 +38,13 @@ $(document).ready(function(){
 	        scrollTop: $("#facturacion").offset().top
 	    }, 2000);
 	},2000);
-	setTimeout(function(){
+	/*setTimeout(function(){
 		animate(".animate-info", "bounce");
 	},3500);
 
 	setTimeout(function(){
 		animate(".animate-form", "wobble");
-	},5000);
+	},5000);*/
 
 	var envio = 4000;
 	var subtotal = 0;
@@ -53,7 +53,7 @@ $(document).ready(function(){
 	comboV[1]=60000;
 	comboV[2]=125000;
 	comboV[3]=110000;
-	comboV[4]=0;
+	comboV[4]=60000;
 
 	// Coloca valores a la informacion del pedido
 
@@ -94,11 +94,55 @@ $(document).ready(function(){
 		setCookie("dataForm",dataForm,1);
 		window.location.href = "productos.php";
 	});
-
+	var statusPed = 1;
 	// Botón realizar pedido
 	$("#PAYconfirm_btn").click(function(){
-		if ($("#facturacion").valid() && validYears()) {
-			var txtCaptcha = grecaptcha.getResponse();
+
+		if ($("#facturacion").valid() && validYears() && statusPed == 1) {
+			statusPed = 0;
+			if (getCookie("f3ch4Nac#af") == null || getCookie("f3ch4Nac#af") == undefined) {
+				deleteCookie("i34rs#af");
+				// Redirecciona
+				window.location.href = "./";
+			};
+			var dataForm = $("#facturacion").serialize()+"&fechaNac="+getCookie("f3ch4Nac#af");
+			var resultAjax = sendAjax("checkout.php", "comprar", dataForm);
+			statusPed = 1;
+			if (resultAjax.error == 0) {
+				message("Datos no válidos",3000);
+			}else if (resultAjax.error == 1) {
+				// Evento Analytics
+/*				var idPedido = resultAjax.data.idPedido;
+				var total = resultAjax.data.total;
+				dataLayer = [{
+					'transactionId': idPedido,
+					'transactionTotal': total
+				}];*/
+				setTimeout(function(){dataLayer.push({'event': 'envio-exitoso'});},1);
+				
+				message("Gracias por comprar, ¡Salud!",3000);
+				// Borramos cookies
+				deleteCookie("dataForm");
+				for (var i = 1 ; i <= 4; i++) {
+					deleteCookie("cmb"+i);
+				}
+				// Redirecciona
+				setTimeout(function(){
+					window.location.href = "./";
+				},3500);
+			}else if (resultAjax.error == 2) {
+				message("Ocurrio un error al insertar",3000);
+			}else if (resultAjax.error == 31) {
+				message("No hay combos disponibles para el combo 1",3000);
+			}else if (resultAjax.error == 32) {
+				message("No hay combos disponibles para el combo 2",3000);
+			}else if (resultAjax.error == 33) {
+				message("No hay combos disponibles para el combo 3",3000);
+			}else if (resultAjax.error == 34) {
+				message("No hay combos disponibles para el combo 4",3000);
+			}
+
+			/*var txtCaptcha = grecaptcha.getResponse();
 			captchaData = { txtCaptcha : txtCaptcha};
 			var resultAjaxCaptcha = sendAjax("checkout.php", "captcha", captchaData);
 			if (resultAjaxCaptcha.error == 0) {
@@ -106,42 +150,8 @@ $(document).ready(function(){
 			}else if (resultAjaxCaptcha.error == 2) {
 				message("captcha no coincide",3000);
 			}else if (resultAjaxCaptcha.error == 1) {
-				var dataForm = $("#facturacion").serialize()+"&fechaNac="+getCookie("f3ch4Nac#af");
-				var resultAjax = sendAjax("checkout.php", "comprar", dataForm);
-				if (resultAjax.error == 0) {
-					message("Datos no válidos",3000);
-				}else if (resultAjax.error == 1) {
-					// Evento Analytics
-					console.log(resultAjax.data,"data");
-					var idPedido = resultAjax.data.idPedido;
-					var total = resultAjax.data.total;
-					dataLayer.push({'event': 'envio-exitoso'});
-					dataLayer = [{
-						'transactionId': idPedido,
-						'transactionTotal': total
-					}];
-					message("inserto correctamente",3000);
-					// Borramos cookies
-					deleteCookie("dataForm");
-					for (var i = 1 ; i <= 4; i++) {
-						deleteCookie("cmb"+i);
-					}
-					// Redirecciona
-					setTimeout(function(){
-						window.location.href = "./";
-					},3500);
-				}else if (resultAjax.error == 2) {
-					message("Ocurrio un error al insertar",3000);
-				}else if (resultAjax.error == 31) {
-					message("No hay combos disponibles para el combo 1",3000);
-				}else if (resultAjax.error == 32) {
-					message("No hay combos disponibles para el combo 2",3000);
-				}else if (resultAjax.error == 33) {
-					message("No hay combos disponibles para el combo 3",3000);
-				}else if (resultAjax.error == 34) {
-					message("No hay combos disponibles para el combo 4",3000);
-				}
-			};
+				// Captcha correcto
+			};*/
 		}
 		
 	});

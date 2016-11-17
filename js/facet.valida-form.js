@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
 	           tel:       {required: true,maxlength: 13, minlength: 7, digits: true},
 	           terminos:        {required: true},
 	           politica:        {required: true},
+	           enviomail:        {required: true},
 	           dd:          {required: true,digits: true},  
 	           mm:          {required: true,digits: true},  
 	           aaaa:          {required: true,digits: true} 
@@ -45,6 +46,7 @@ jQuery(document).ready(function($) {
 	      tel:      {required: "Ingresa tu n&uacute;mero de tel&eacute;fono", maxlength:"N&uacute;mero no v&aacute;lido", minlength:"N&uacute;mero no v&aacute;lido", digits: "solo se aceptan números" },
 	      terminos:         {required: "Debes aceptar los términos y condiciones"},
 	      politica:         {required: "Debes aceptar la política de datos"},
+	      enviomail:         {required: "Debes aceptar que Absolut me contacte para información de eventos y beneficios"},
 	      dd:         {required: "Indica un día",digits: "solo se aceptan números" },
 	      mm:         {required: "Indica un mes",digits: "solo se aceptan números" },
 	      aaaa:         {required: "Indica un año",digits: "solo se aceptan números" }
@@ -54,7 +56,7 @@ jQuery(document).ready(function($) {
 
 	    errorPlacement: function (error, element) {
 
-	      if( element.attr('name') == 'terminos' || element.attr('name') == 'politica' || element.attr('name') == 'dd' || element.attr('name') == 'mm' || element.attr('name') == 'aaaa' ){
+	      if( element.attr('name') == 'terminos' || element.attr('name') == 'politica' || element.attr('name') == 'enviomail' || element.attr('name') == 'dd' || element.attr('name') == 'mm' || element.attr('name') == 'aaaa' ){
 
 	        error.insertAfter(element.parent().parent());
 

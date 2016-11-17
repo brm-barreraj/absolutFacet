@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-04 20:11:56
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-09 22:18:53
          compiled from "./templates/productos.html" */ ?>
 <?php /*%%SmartyHeaderCode:51441735813d02f397766-23932323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '237c43043241f59a91c1da6b6abcae1d1f9216be' => 
     array (
       0 => './templates/productos.html',
-      1 => 1478290316,
+      1 => 1478729862,
       2 => 'file',
     ),
   ),
@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <img src="images/botella.jpg" alt="Botella de Absolut" title="Botella de Absolut" >
       </div>
       <p class="price">$60.000</p>
-      <p class="name">Botella de Absolut con caja especial</p>
+      <p class="name">Botella Absolut Facet</p>
       
       <div class="cantidad">
         <input type="text" disabled="disabled" readonly maxlength="2" placeholder="0" class="form-control" id="txt-cmb1">
@@ -129,12 +129,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
 	</div>
-  <input type="hidden" disabled="disabled" readonly maxlength="2" placeholder="0" class="form-control" id="txt-cmb4">
-    <!-- <div class="alignCenter cartModule">
-      <div class="product"><img src="images/cartProducts_04.jpg" alt="Combo sorpresa" title="Combo sorpresa"></div>
+  <!-- <input type="hidden" disabled="disabled" readonly maxlength="2" placeholder="0" class="form-control" id="txt-cmb4"> -->
+    <div class="alignCenter cartModule">
+      <div class="product"><img src="images/absolut_con_caja.png" alt="Botella de Absolut con caja especial" title="Botella de Absolut con caja especial"></div>
 
-      <p class="price">$99.999</p>
-      <p class="name">Combo sorpresa</p>
+      <p class="price">$60.000</p>
+      <p class="name">Botella de Absolut con caja especial</p>
       
       <div class="cantidad">
         <input type="text" disabled="disabled" readonly maxlength="2" placeholder="0" class="form-control" id="txt-cmb4">
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       </div>
       
-	</div> -->
+	</div>
   <div  class="btn_pay" id="PAYbtn" value="Pagar">Pagar</div>
   <div id="errorMensaje" class="mensaje-sistema" style="display:none;">
       <p>

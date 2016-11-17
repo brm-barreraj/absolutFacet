@@ -17,25 +17,23 @@ class Horus extends General
 	public $totalEnvio = 4000;
 
 	// Unidades combos
-	public $combo1U = 100;
+	public $combo1U = 250;
 	public $combo2U = 30;
-	public $combo3U = 25;
-	// Falta cambiar El combo 4
-	public $combo4U = 0;
+	public $combo3U = 20;
+	public $combo4U = 100;
 	public $totalUnidades = 0;
 
 	// Valores combos
 	public $combo1V = 60000;
 	public $combo2V = 125000;
 	public $combo3V = 110000;
-	// Falta cambiar El combo 4
-	public $combo4V = 0;
+	public $combo4V = 60000;
 
 	public $totalValores = 0;
-	public $comboName1 = "Botella de Absolut con caja especial";
+	public $comboName1 = "Botella Absolut Facet";
 	public $comboName2 = "Botella de Absolut + Sombrilla Absolut facet";
 	public $comboName3 = "Botella de Absolut + Coctelera Absolut";
-	public $comboName4 = "Combo sorpresa";
+	public $comboName4 = "Botella de Absolut con caja especial";
 
 	private $brand='absolut';
 	private $litres='700ml';

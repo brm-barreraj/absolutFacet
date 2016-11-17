@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-04 17:20:00
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-11-09 22:20:29
          compiled from "./templates/checkout.html" */ ?>
 <?php /*%%SmartyHeaderCode:5263414005813d0be9f94d2-12247214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cfe357878fa86e754db09c36b1edfa0b418221c1' => 
     array (
       0 => './templates/checkout.html',
-      1 => 1478276307,
+      1 => 1478730028,
       2 => 'file',
     ),
   ),
@@ -53,9 +53,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  src="//html5shiv.googlecode.com/svn/trunk/html5.js"><?php echo '</script'; ?>
 >
   <![endif]-->
-  <?php echo '<script'; ?>
- src='https://www.google.com/recaptcha/api.js'><?php echo '</script'; ?>
->
+  <!--script src='https://www.google.com/recaptcha/api.js'><?php echo '</script'; ?>
+-->
   <?php echo '<script'; ?>
  src="js/modernizr-2.6.2.min.js"><?php echo '</script'; ?>
 >
@@ -158,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <th class="text-center">Total</th>
         </tr>
         <tr class="producto" id="combo1" style="display:none;">
-          <td >Botella de Absolut con caja especial</td>
+          <td >Botella Absolut Facet</td>
           <td class="text-center"></td>
           <td></td>
         </tr>
@@ -173,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <td></td>
         </tr>
         <tr class="producto" id="combo4" style="display:none;">
-          <td>Combo sorpresa</td>
+          <td>Botella de Absolut con caja especial</td>
           <td class="text-center"></td>
           <td></td>
         </tr>
@@ -208,13 +207,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="check02">
       <div class="checkbox">
         <label for="terminos">
-          <input type="checkbox" name="terminos" id="terminos" /> Conozco los <a href="#">términos y condiciones.</a>
-          
+          <input type="checkbox" name="terminos" id="terminos" /> Conozco los <a target="_blank" href="documents/terminos_compras_absolut_facet.pdf">términos y condiciones.</a>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label for="terminos">
+          <input type="checkbox" name="politica" id="politica" /> Conozco y he leído los <a target="_blank" href="documents/derechos_titular_general.pdf">derechos del titular y la política de tratamiento de datos.</a>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label for="terminos">
+          <input type="checkbox" name="enviomail" id="enviomail" /> Acepto que Pernod Ricard, compañía dueña de Absolut me contacte para información de eventos y beneficios, por cualquiera de los medios entregados.
         </label>
       </div>
     </div>
     <div class="txt03">No vendemos a menores de edad, es necesario presentar la cédula de la persona que recibe el pedido. </div>
-    <div class="g-recaptcha" data-sitekey="6LectAoUAAAAAF5MimV3XzWEcJoRnpDQs2z6Nr1v"></div>
+    <!-- <div class="g-recaptcha" data-sitekey="6LectAoUAAAAAF5MimV3XzWEcJoRnpDQs2z6Nr1v"></div> -->
     <div id="errorMensaje" class="mensaje-sistema" style="display:none;">
         <p>
             
@@ -222,12 +230,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="btn_confirm" id="PAYconfirm_btn">realizar pedido</div>
     <div class="btn_back" id="BACKbtn">regresar</div>
-  <div class="confirmacion hidden">
-    <p class="text-center">
-      Gracias por comprar
-    </p>
-    <h3 class="text-center">¡Salud! </h3>
-  </div>
+    <div class="confirmacion hidden">
+      <p class="text-center">
+        Gracias por comprar
+      </p>
+      <h3 class="text-center">¡Salud! </h3>
+    </div>
 
 </form>
 <div class="footer">

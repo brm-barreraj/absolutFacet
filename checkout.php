@@ -77,7 +77,41 @@ switch ($_POST['action']) {
 				if ($idPedido > 0) {
 					// Inserto correctamente
 					$data = array('idPedido' => $idPedido,'total' => $totalValor);
+
 					if(!$_local){
+						// Envío Mail
+						$pedido = $General->getTotalDatos('AbsPedido',null,array('id'=>$idPedido));
+						$date = date_create($pedido[0]->fecha);
+						$datePedido = date_format($date, 'Ymd');
+						$nPedido = "0000".$datePedido.$pedido[0]->id;
+						$smarty->assign("nPedido",$nPedido);
+						$smarty->assign("pedido",$pedido[0]);
+						$smarty->assign("combo1V",($Horus->combo1V * $pedido[0]->cantidadCombo1));
+						$smarty->assign("combo2V",($Horus->combo2V * $pedido[0]->cantidadCombo2));
+						$smarty->assign("combo3V",($Horus->combo3V * $pedido[0]->cantidadCombo3));
+						$smarty->assign("combo4V",($Horus->combo4V * $pedido[0]->cantidadCombo4));
+						$subtotal = (($Horus->combo1V * $pedido[0]->cantidadCombo1) + ($Horus->combo2V * $pedido[0]->cantidadCombo2) + ($Horus->combo3V * $pedido[0]->cantidadCombo3) + ($Horus->combo4V * $pedido[0]->cantidadCombo4));
+						$smarty->assign("subtotal",$subtotal);
+						$smarty->assign("totalEnvio",$Horus->totalEnvio);
+						$body = $smarty->fetch("mail-confirmacion.html");
+
+						$para  = $pedido[0]->email;// . ', '; // atención a la coma
+						$titulo = 'Confirmación compra';
+						$mensaje= $body;
+						// Cabecera que especifica que es un HMTL
+						$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+						$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+						// Cabeceras adicionales
+						$cabeceras .= 'From: Absolut Colombia <colombia@absolut.com>' . "\r\n";
+						//$cabeceras .= 'Cc: archivotarifas@example.com' . "\r\n";
+						//$cabeceras .= 'Bcc: julian.barrera@a3bpo.co,gbahamon@teletrade.com.co,gabriela.parias@pernod-ricard.com,domicilios@teletrade.com.co,alejandra.vargas@brm.com.co,juan.osman@brm.com.co,gabrielaparias@gmail.com,andres.pineda@deeploy.co' . "\r\n";
+						// enviamos el correo! al cliente
+						mail($para, $titulo, $mensaje, $cabeceras);
+						// enviamos el correo! al vendedor
+						$para = 'julian.barrera@a3bpo.co,gbahamon@teletrade.com.co,gabriela.parias@pernod-ricard.com,domicilios@teletrade.com.co,alejandra.vargas@brm.com.co,juan.osman@brm.com.co,gabrielaparias@gmail.com,andres.pineda@deeploy.co' . "\r\n";
+						$titulo = 'Se ha registrado una nueva compra de Absolut Facet';
+						mail($para, $titulo, $mensaje, $cabeceras);
+
 						// Envío Horus
 						$Horus->init($idPedido);
 					}
